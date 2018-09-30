@@ -1,0 +1,15 @@
+.bandeau {
+	width:600px;
+	height:50px;
+	background-color:#00CCFF;
+    }
+    .contenu1 {
+	width:600px;
+	height:400px;
+	background-color:#FFCC00;
+	}
+.contenu2 {
+	width:600px;
+	height:50px;
+	background-color:#33FF99;
+	}

@@ -3,15 +3,24 @@ class Model_Donnee extends CI_Model
 {
     public function getAllDemandes()
     {
-       $query = $this->db->query('select idDemande, descriptionDemande from demande where idUser = 1');
+       $query = $this->db->query('
+       SELECT idDemande, service.nomService, dateDemande, descriptionDemande 
+       FROM demande, service 
+       WHERE demande.idService = service.idService 
+       AND demande.idUser = 1');
        return $query->result();
     }
 
    public function getAllOffre()
    {
-   $query = $this->db->query('select idOffre, descriptionOffre from offre where idUser = 1');
-   return $query->result();
+      $query = $this->db->query('
+      SELECT offre.descriptionOffre, offre.dateOffre, service.nomService
+      FROM offre, service
+      WHERE offre.idService = service.idService
+      AND offre.idUser = 1');
+      return $query->result();
    }
+  
 }
 ?>
 
