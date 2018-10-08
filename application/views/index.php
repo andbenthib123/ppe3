@@ -10,10 +10,10 @@
 <body>
 
 
-<?php  echo form_open ('Controller_login' ); echo validation_errors ();  
+<?php  //echo form_open ('Controller_login' ); echo validation_errors ();  
 
 ?>    
-<form method='GET' action="index.php">
+<form method='GET' action="<?php echo base_url() ?>index.php/Controller_login/test">
 
         <label>nom d'utlisateur</label><br>
         <input type="text" name="txtUser" id="txtUser"><br>
