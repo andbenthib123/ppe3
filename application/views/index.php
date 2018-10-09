@@ -20,6 +20,7 @@
         <label>mot de passe</label><br>
         <input type="password" name="txtMdp" id="txtMdp"><br>
         <input type="submit" name="btnValider" id="btnValider" value="valider">
+        <a href="<?php echo base_url()?>index.php/Controller_login/inscriptions">inscription</a>
 </form>
 </body>
 </html>

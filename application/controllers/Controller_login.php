@@ -34,9 +34,56 @@ class Controller_login extends CI_Controller {
 			else
 			{
 				$this->load->view('index');
-	echo'c faux';
+	echo'votre identifiant ou mot de passe est incorrect';
 			}
 		
 		}
+	}
+
+	public function inscriptions()
+	{
+		$this->load->view('inscriptions');
+		
+	
+			if(isset($_GET['btnInscriptions']))
+			{
+				$idUser=$this->input->get('idUser');
+				$nom = $this->input->get('txtNom');
+		$prenom = $this->input->get('txtPrenom');
+		$login = $this->input->get('txtLogin');
+		$motDePasse = $this->input->get('txtMdp');
+		$nomPrenom=$nom.' '.$prenom;		
+				if(!empty($_GET['txtNom']))
+				{
+					if(!empty($_GET['txtPrenom']))
+					{
+						if(!empty($_GET['txtLogin']))
+						{
+							if(!empty($_GET['txtMdp']))
+							{
+								$this->load->model('M_Login');
+								$info['newtest'] = $this->M_Login->inscription($idUser,$nomPrenom,$login,$motDePasse);
+							}
+							else
+							{
+							echo'veuillez mettre un mot de passe';
+							}	
+						}
+						else
+						{
+						echo'veuillez mettre un login';
+						}	
+					}	
+					else
+					{
+					echo'veuillez mettre un prenom';
+					}
+				}
+				else
+				{		
+				echo'veuillez mettre un nom';
+				}
+			}
+		
 	}
 }
