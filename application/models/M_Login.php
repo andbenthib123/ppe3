@@ -16,7 +16,7 @@ class M_Login extends CI_Model
         'nomUser'	=>$nomPrenom,
         'login'=>$login,
         'mdp'=>$motDePasse);
-$this->db->insert('user', $data);
+        $this->db->insert('user', $data);
      }
 }
 ?>
