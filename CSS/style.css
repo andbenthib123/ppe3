@@ -39,6 +39,18 @@ body {
 }
 .login h2 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
+.alert
+{
+max-height: 10%;
+	height: 45px;
+
+}
+.alert-danger
+{
+
+width: 100%;
+
+}
 .input { 
 	width: 100%; 
 	margin-bottom: 10px; 

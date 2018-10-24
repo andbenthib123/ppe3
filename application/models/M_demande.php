@@ -1,7 +1,4 @@
 <?php
-
-
-
 class M_demande extends CI_Model
 {
    

@@ -19,14 +19,35 @@
 </head>
 <body>
 <div class="login">
-<form   method='POST' action="<?php echo base_url()?>index.php/Controller_login/login">
+
+<form method='POST' action="<?php echo base_url()?>index.php/Controller_login/login">
+
     <div class="form-group">
     <h2>connectez-vous!</h2><br>
-    <p id='txtmessageAlert' class='alert alert-danger p'>remplir tout les champs</p>
+    <?php
+    if(isset($login))
+    {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un login </p>";    
+    }
+    else
+    {
+        if(isset($motdepasse))
+        {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un mot de passe</p>";
+        }
+        else
+        {
+            if(isset($compte))
+            {
+          echo  "<p id='txtmessageAlert' class='alert alert-danger '>mot de passe ou identifiant incorrect</p>";
+            }
+        }
+    }
+?>
     <input type="text" placeholder="login"  class=" input form-control" name="txtUser" id="txtUser"><br>
     <input type="password" placeholder="mot de passe" class="input form-control" name="txtMdp" id="txtMdp"><br>
   
-    <input type="submit" class="btn btn-primary btn-block btn-large" onclick="afficherMessageErreur()" name="btnValider" id="btnValider" value="valider"><br>
+    <input type="submit" class="btn btn-primary btn-block btn-large" name="btnValider" id="btnValider" value="valider"><br>
     <a class="inscrire" style="text-decoration:none;" href="<?php echo base_url()?>index.php/Controller_login/inscriptions">inscris toi</a>
 
     <div>

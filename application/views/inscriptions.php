@@ -19,6 +19,34 @@
 <form method='POST' action="<?php echo base_url()?>index.php/Controller_login/inscriptions">
 <div class="form-group">
 <h2>Inscris toi!</h2><br>
+
+ <?php
+    if(isset($nom))
+    {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un nom </p>";    
+    }
+    else
+    {
+        if(isset($prenom))
+        {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '>veuillez mettre un prenom</p>";
+        }
+        else
+        {
+            if(isset($user))
+            {
+          echo  "<p id='txtmessageAlert' class='alert alert-danger '>veuillez mettre un identifiant </p>";
+            }
+            else
+            {
+                if(isset($mdp))
+            {
+          echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un  mot de passe </p>";
+            }
+            }
+        }
+    }
+?>
 <p id='txtmessageAlertInscription' class='alert alert-danger p'>remplir tout les champs</p>
 <input type="text"  class=" input form-control" placeholder='Nom' id="txtNom" name="txtNom">
 <input type='text' class=" input form-control" placeholder='Prenom' id="txtPrenom" name='txtPrenom'>

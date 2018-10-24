@@ -1,8 +1,5 @@
 <?php
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,7 +76,7 @@ if(!isset($_SESSION))
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="offre">MES OFFRES &nbsp<a class="lienplus">+</a></h2>';
+     echo '<h2 id="offre">MES OFFRES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h2>';
      echo '</div>';
      echo '<br>';
      foreach($lesOffres as $uneOffre)

@@ -25,7 +25,7 @@ class Controller_login extends CI_Controller {
 		public function login()
 
 		{
-			$this->load->view('index');	
+			//	
 
 			if(!empty($_POST['txtUser']))
 			{
@@ -43,14 +43,28 @@ class Controller_login extends CI_Controller {
 					$idUser=$info['idUser'];
 					$this->session->set_userdata('idUser',$idUser);
 					$user=$this->session->userdata('idUser');
-					var_dump($_SESSION['idUser']);
+		
 					
-
 					 header('location:'.base_url().'index.php/Controller_login/utilisateur/'.$user);		
+					}
+					else
+					{
+						$data['compte'] = "Ton message d'erreur";
+						$this->load->view('index',$data);
 					}
 			
 				}
+				else
+				{
+					$data['motdepasse'] = "Ton message d'erreur";
+						$this->load->view('index',$data);
+				}
 		
+			}
+			else
+			{
+				$data['login'] = "Ton message d'erreur";
+						$this->load->view('index',$data);
 			}
 			
 		}
@@ -61,7 +75,8 @@ class Controller_login extends CI_Controller {
 
 	public function inscriptions()
 	{
-		$this->load->view('inscriptions');
+		$this->load->view('inscriptions');				
+
 			if(isset($_POST['btnInscriptions']))
 			{
 				
@@ -86,22 +101,26 @@ class Controller_login extends CI_Controller {
 							}
 							else
 							{
-							echo'veuillez mettre un mot de passe';
+								$data['mdp'] = "Ton message d'erreur";
+								$this->load->view('inscriptions',$data);					
 							}	
 						}
 						else
 						{
-						echo'veuillez mettre un login';
-						}	
+							$data['user'] = "Ton message d'erreur";
+							$this->load->view('inscriptions',$data);					
+							}	
 					}	
 					else
 					{
-					echo'veuillez mettre un prenom';
+						$data['prenom'] = "Ton message d'erreur";
+						$this->load->view('inscriptions',$data);					
 					}
 				}
 				else
 				{		
-				echo'veuillez mettre un nom';
+					$data['nom'] = "Ton message d'erreur";
+					$this->load->view('inscriptions',$data);				
 				}
 			}
 			if(isset($_POST['btnRetour']))
