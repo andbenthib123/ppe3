@@ -62,7 +62,7 @@ if(!isset($_SESSION))
     echo '<div>';
     echo '<br>';
     echo '<div class="demande">';
-    echo '<h2 id="demande">MES DEMANDES &nbsp<a class="lienplus">+</a></h2>';
+    echo '<h2 id="demande">MES DEMANDES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationFormulaire/">+</a></h2>';
     echo '</div>';
     echo '<br>';
     

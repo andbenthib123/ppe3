@@ -1,56 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+</html>
+
+
 <?php
-session_start();
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Controller_login extends CI_Controller {
 	
 
 	public function index()
 	{				
-	
-		$this->load->view('index');
+		$this->load->view('index');	
 	}
 
 		public function login()
-		{	
-		if(!empty($_POST['txtUser']))
-		{
-		if(!empty($_POST['txtMdp']))
-		{
-	
-		
-		$login=$_POST['txtUser'];
-		$mdp=$_POST['txtMdp'];
-		$this->load->model('M_Login');
-		$info['connexion']=$this->M_Login->index($login,$mdp);
-		
- 			//echo var_dump($info);
-		 	if( count($info['connexion'])!=0)
-			{
-			
-			$info = (array) $info['connexion'][0];
-			echo $info['idUser'];
-			$idUser=$info['idUser'];
-			echo $idUser;
 
-		header('location:'.base_url().'index.php/Controller_login/utilisateur/'.$idUser);		
-			}
-			else
-			{
-				$this->load->view('index');
-			}
-		}
-		else
 		{
+			$this->load->view('index');	
+
+			if(!empty($_POST['txtUser']))
+			{
+				if(!empty($_POST['txtMdp']))
+				{
+	
+					$login=$_POST['txtUser'];
+					$mdp=$_POST['txtMdp'];
+					$this->load->model('M_Login');
+					$info['connexion']=$this->M_Login->index($login,$mdp);
+					if( count($info['connexion'])!=0)
+					{	
+						$this->load->library('session');
+					$info = (array) $info['connexion'][0];
+					$idUser=$info['idUser'];
+					$this->session->set_userdata('idUser',$idUser);
+					$user=$this->session->userdata('idUser');
+					var_dump($_SESSION['idUser']);
+					
+
+					 header('location:'.base_url().'index.php/Controller_login/utilisateur/'.$user);		
+					}
+			
+				}
 		
-			echo'veillez mettre un mot de passe';
+			}
 			
 		}
-	}
-	else
-	{
-		echo'veillez mettre un login';
-	}
-}
+
+
+
 
 
 	public function inscriptions()
@@ -76,7 +82,7 @@ class Controller_login extends CI_Controller {
 								
 								$this->load->model('M_Login');
 								$info['newtest'] = $this->M_Login->inscription($idUser,$nomPrenom,$login,$motDePasse,$photo);
-								$this->load->view('index');
+								header('location:'.base_url().'index.php/Controller_login/index');	
 							}
 							else
 							{
@@ -98,8 +104,15 @@ class Controller_login extends CI_Controller {
 				echo'veuillez mettre un nom';
 				}
 			}
+			if(isset($_POST['btnRetour']))
+			{
+				header('location:'.base_url().'index.php/Controller_login/index/');
+			}
 		
 	}
+
+
+
 
 
 	public function utilisateur($idUser)
