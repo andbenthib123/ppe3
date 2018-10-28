@@ -17,7 +17,8 @@ $this->load->library('session');
     <script src="<?php echo base_url();?>./Bootstrap/js/bootstrap.js"></script>
     <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
-    <link href="<?php echo base_url();?>./CSS/style_demandeetoffre.css" rel="stylesheet">  
+    <link href="<?php echo base_url();?>./CSS/style.css" rel="stylesheet">
+    
     
 </head>
 <body>
@@ -48,5 +49,7 @@ $this->load->library('session');
     <form methode='GET' action="<?php echo base_url()?>index.php/C_creationOffre/retour">
     <input type='submit' name='btnHome' value='home'>
     </form>
+
+    
 </body>
 </html>
