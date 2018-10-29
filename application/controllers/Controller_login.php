@@ -129,24 +129,22 @@ class Controller_login extends CI_Controller {
 
 public function deconnexion()
 {
+	$this->load->library("session");
 	$this->session->sess_destroy();
-	header('location:'.base_url().'index.php/Controller_login/');	
-
-}
-
+$this->load->view("index");	
+}			
 
 
-	public function utilisateur($idDeal)
+
+	public function utilisateur()
 	{	
 		$this->load->model('M_demande');
 		$this->load->library('session');
-	
+		$data['serviceUser2'] = $this->M_demande->getAllDealService();
 		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
 		$data['lesOffres'] = $this->M_demande->getAllOffre();
 		$data['lesDeals'] = $this->M_demande->getAllDeal();
-		$data['DealsService'] = $this->M_demande->getAllDealService($idDeal);
-		
-		
+
 		$this->load->view('compte_Utilisateur',$data);
 	}
 }

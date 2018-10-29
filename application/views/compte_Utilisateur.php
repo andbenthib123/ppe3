@@ -52,7 +52,7 @@ $this->load->library('session');
 <p class="p"><?php  echo$_SESSION['nomUser'];?></p>
 <img class="p photoheader"src="<?php echo $_SESSION['photoUser']; ?>"  >
 <nav class='menu'>
-<a href="<?php base_url()?>index.php/Controller_login/index/">Deconnexion</a>
+<a href="<?php base_url()?>index.php/Controller_login/deconnexion/">Deconnexion</a>
 <a href="#deal">Deal &nbsp;|</a>
 <a href='#demande' >Demande &nbsp;|</a>
 <a href='#offre' >Offre &nbsp;|</a>
@@ -111,11 +111,11 @@ if($unDeal->idEtat ==1)
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
     echo"<p>VS</p>";
-   foreach($DealsService as $dealService)
-   {
-    
-    echo"<p>".$dealService->nomService."</p>"; 
-   }
+   
+    foreach($serviceUser2 as $serviceUser)
+    {
+    echo"<p>".$serviceUser->nomService."</p>"; 
+    }
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
     echo"<input type='button' value='afficher'>";
@@ -130,10 +130,10 @@ else
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
     echo"<p>VS</p>";
-    foreach($DealsService as $dealService)
-   {
-    echo"<p>".$dealService->nomService."</p>"; 
-   }
+    foreach($serviceUser2 as $serviceUser)
+    {
+    echo"<p>".$serviceUser->nomService."</p>"; 
+    } 
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
 
