@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Accueil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="Jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>JS/lesfonction.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>Jquery/jquery-3.2.1.js"></script>
         <script src="./Bootstrap/js/bootstrap.min.js"></script>
         <script src="./Bootstrap/js/bootstrap.js"></script>
         <link href="./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">

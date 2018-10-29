@@ -21,6 +21,7 @@ class Model_Donnee extends CI_Model
       return $query->result();
    }
   
+  
 }
 ?>
 
