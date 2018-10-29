@@ -64,7 +64,7 @@ foreach($modifierMaDemande as $ServiceDemande)
 ?>
 </div>
 </form>
-<input type="submit" name="btnValider" value="valider" onclick="enregisterModifDemande()"><br>
+<input type="submit" name="btnValider" value="ok" onclick="enregisterModifDemande()"><br>
 <form action="<?php echo base_url(); ?>index.php/Home/index">
 <input type="submit" value="Home">
 </form>
