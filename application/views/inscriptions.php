@@ -52,7 +52,7 @@
 <input type='text' class=" input form-control" placeholder='Prenom' id="txtPrenom" name='txtPrenom'>
 <input type="text" class=" input form-control" placeholder="login" id="txtLogin" name='txtLogin'>
 <input type="password"  class=" input form-control" placeholder="mot de passe" id="txtMdp" name='txtMdp'><br>
-<input type="submit" class="btn btn-primary btn-block btn-large" onclick='afficherMessageErreurInscription()' value='Valider' name='btnInscriptions'>
+<input type="submit" class="btn btn-primary btn-block btn-large"  value='Valider' name='btnInscriptions'>
 <input type="submit" value="retour" name="btnRetour" class="retour" >
 </div>
 </form>

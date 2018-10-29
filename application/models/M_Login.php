@@ -6,7 +6,7 @@ class M_Login extends CI_Model
      {
       
 
-       $sql = $this->db->query("select idUser,login,mdp from user where login ='".$login."' and mdp = '".$mdp."'");
+       $sql = $this->db->query("select idUser,login,mdp,nomUser,photoUser from user where login ='".$login."' and mdp = '".$mdp."'");
       return $sql->result();
       
      }

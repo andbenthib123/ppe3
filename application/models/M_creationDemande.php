@@ -1,24 +1,25 @@
 <?php
 
-class M_creationFormulaire extends CI_Model
+class M_creationDemande extends CI_Model
 {
-    function M_formulaire($idDemande,$descriptionDemande,$idservice)
+    function M_insererDemande($descriptionDemande,$idservice)
     {
         $this->load->library('session');
 
         $user=$this->session->userdata('idUser');
+        $idDemande=$this->session->userdata('idDemande');
         $data = array( 
-            'idDemande'=>$idservice,
-            'descriptionDemande'=>$idDemande,
+            'idDemande'=>$idDemande,
+            'descriptionDemande'=>$descriptionDemande,
             'dateDemande'=>date('y-m-d'),
-            'idService'=>$descriptionDemande,
+            'idService'=>$idservice,
             'idUser'=>$user);
             $this->db->insert('demande', $data);
             
     }
 
 
-    function afficherlesservice()
+    function afficherlesservices()
     {
         $sql=$this->db->query('select idService,nomService from service');
         return $sql->result();
