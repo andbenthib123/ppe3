@@ -103,7 +103,7 @@ $this->load->library('session');
      echo '<br>';
      foreach($lesDeals as $unDeal)
      {
-         var_dump($unDeal->nomService);
+         
 if($unDeal->idEtat ==1)
 {
     echo '<div id="divDealR" class="corpsDeal centre">';
@@ -113,7 +113,7 @@ if($unDeal->idEtat ==1)
     echo"<p>VS</p>";
    foreach($DealsService as $dealService)
    {
-    var_dump($dealService->nomService);
+    
     echo"<p>".$dealService->nomService."</p>"; 
    }
     echo"<p>".$unDeal->dateDeal."</p>";
