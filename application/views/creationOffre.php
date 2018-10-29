@@ -21,12 +21,27 @@ $this->load->library('session');
     
 </head>
 <body>
-
-    <form method='GET' action="<?php echo base_url()?>index.php/C_creationOffre/insererOffre">
+<div class="div ">
+    <form method='POST' action="<?php echo base_url()?>index.php/C_creationOffre/insererOffre">
     <div>
     <h3>creation d'une Offre</h3><br>
+    <?php
+    if(isset($descriptions))
+    {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre une description </p>";    
+    }
+    else
+    {
+        if(isset($select))
+        {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez choisir un service</p>";
+        }
+        
+        
+    }
+?>
     <label>numero de l'offre</label><br>
-    <input type="text" value="<?php echo$_SESSION['idOffre'];?>" id="txtidOffre" name="txtidOffre"><br>
+    <input disabled type="text" value="<?php echo$_SESSION['idOffre'];?>" id="txtidOffre" name="txtidOffre"><br>
     <label>description de l'offre</label><br>
     <textarea name="txtDescriptionsOffre" id="txtDescriptionsOffre"></textarea><br>
     <label>nom du service</label><br>
@@ -41,12 +56,13 @@ $this->load->library('session');
 
     ?>
     </select><br>
-    <input type='submit' name='btnValider' value='valider' onclick='insereOffreAjax()'><br>
+    <input class='btnCreation' type='submit' name='btnValider' value='valider' ><br>
    
     </div>
     </form>
-    <form methode='GET' action="<?php echo base_url()?>index.php/C_creationOffre/retour">
-    <input type='submit' name='btnHome' value='home'>
+    <form methode='GET' action="<?php echo base_url()?>index.php/Controller_login/utilisateur/retour">
+    <input class='btnCreation' type='submit' name='btnHome' value='retour'>
     </form>
+    <div>
 </body>
 </html>

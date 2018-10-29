@@ -1,6 +1,7 @@
 <?php
-
+$this->load->library('session');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,55 +19,61 @@
         $(
             function()
             {
-              $("h1").css('color','white');
-              $("a").css('color','white');
-              $("p").css('color','white');
+           
              
               $('.element').mouseenter(
                   function(){
-                      $(this).css('background','#B11F01');
+                      $(this).css('background','#d4caca71');
                   }
               )
               $('.element').mouseout(
                   function(){
-                      $(this).css('background','#E82E07');
+                      $(this).css('background','#d4caca71');
                   }
               )
               $('.corps').mouseenter(
                   function(){
-                      $(this).css('background','#611404')
+                      $(this).css('background','#d4caca71')
                   }
               )
               $('.corps').mouseout(
                   function(){
-                      $(this).css('background','#000000')
+                      $(this).css('background','#d4caca71')
                   }
               )
             }
         );
         </script>
 </head>
+
 <body class="body">
-<header class="forme">
-<div class="element header" ><a href='<?php base_url()?>utilisateur' style="color: white">Home &nbsp;|</a></div>
-<div class="element header" ><a href='#offre' style="color: white">Offre &nbsp;|</a></div>
-<div class="element header"><a href='#demande' style="color: white">Demande &nbsp;|</a></div>
-<div class="element header"><a>Deal &nbsp;|</a></div>
-<div class="element header"><a>Deconnexion</a></div>
+<header class=" container-fluid header">
+<div class="container ">
+<p class="p"><?php  echo$_SESSION['nomUser'];?></p>
+<img class="p photoheader"src="<?php echo $_SESSION['photoUser']; ?>"  >
+<nav class='menu'>
+<a href="<?php base_url()?>index.php/Controller_login/index/">Deconnexion</a>
+<a href="#deal">Deal &nbsp;|</a>
+<a href='#demande' >Demande &nbsp;|</a>
+<a href='#offre' >Offre &nbsp;|</a>
+<a href='<?php base_url();?>utilisateur' >Home &nbsp;|</a>
+<nav>
+</div>
 </header>
     <?php
   
     echo '<div>';
     echo '<br>';
     echo '<div class="demande">';
-    echo '<h2 id="demande">MES DEMANDES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationFormulaire/">+</a></h2>';
+    echo '<h2 id="demande">MES DEMANDES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationDemande/">+</a></h2>';
     echo '</div>';
     echo '<br>';
     
      foreach($lesDemandes as $laDemande)
      {
         echo '<div class="corps">';
-        echo'<p><a href='.base_url()."index.php/Controller/utilisateur".$laDemande->idDemande.'>'.$laDemande->descriptionDemande.'<br>'.$laDemande->nomService.'<br>'.$laDemande->dateDemande.'</a></p><br>';
+        
+        echo'<p><a href='.base_url()."index.php/C_modifDemande/modifDemande/".$laDemande->idDemande.'>'.$laDemande->descriptionDemande.'<br>'.$laDemande->nomService.'<br>'.$laDemande->dateDemande.'</a></p><br>';
 
         echo '</div>';
      }
@@ -82,10 +89,62 @@
      foreach($lesOffres as $uneOffre)
      {
         echo '<div class="corps">';
-         echo "<p>".$uneOffre->dateOffre."<br>".$uneOffre->nomService."<br>".$uneOffre->descriptionOffre."</p><br>";
+        echo'<p><a href='.base_url()."index.php/C_modifOffre/modifOffre/".$uneOffre->idOffre.'>'.$uneOffre->descriptionOffre.'<br>'.$uneOffre->nomService.'<br>'.$uneOffre->dateOffre.'</a></p><br>';
          echo '</div>';
      }
      echo '</div>';     
-    ?>
+     echo '<br>';
+     echo '<br>';
+     echo '<div>';
+     echo '<br>';
+     echo '<div class="fondDemande">';
+     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h2>';
+     echo '</div>';
+     echo '<br>';
+     foreach($lesDeals as $unDeal)
+     {
+         var_dump($unDeal->nomService);
+if($unDeal->idEtat ==1)
+{
+    echo '<div id="divDealR" class="corpsDeal centre">';
+    echo"<img class='photoCorps' src='".$unDeal->photoUser."'>";
+    echo"<p>".$unDeal->nomUser."</p>";
+    echo"<p>".$unDeal->nomService."</p>";
+    echo"<p>VS</p>";
+   foreach($DealsService as $dealService)
+   {
+    var_dump($dealService->nomService);
+    echo"<p>".$dealService->nomService."</p>"; 
+   }
+    echo"<p>".$unDeal->dateDeal."</p>";
+    echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
+    echo"<input type='button' value='afficher'>";
+     echo '</div>';
+}
+else
+{
+    if($unDeal->idEtat ==2)
+        {
+    echo '<div id="divDealV" class="corpsDeal centre">';
+    echo"<img class='photoCorps' src='".$unDeal->photoUser."'>";
+    echo"<p>".$unDeal->nomUser."</p>";
+    echo"<p>".$unDeal->nomService."</p>";
+    echo"<p>VS</p>";
+    foreach($DealsService as $dealService)
+   {
+    echo"<p>".$dealService->nomService."</p>"; 
+   }
+    echo"<p>".$unDeal->dateDeal."</p>";
+    echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
+
+    echo"<input type='button' value='afficher'>";
+     echo '</div>';
+        }
+    }
+}
+     
+     
+    ?> 
+</div>
 </body>
 </html>

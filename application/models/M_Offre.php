@@ -2,23 +2,23 @@
 
 class M_Offre extends CI_Model
 {
-    function M_insererOffre($idOffre,$descriptionOffre,$idservice)
+    function M_insererOffre($descriptionOffre,$idservice)
     {
         $this->load->library('session');
-
+        $idOffre=$this->session->userdata('idOffre');
         $user=$this->session->userdata('idUser');
         $data = array( 
-            'idOffre'=>$idservice,
-            'descriptionOffre'=>$idOffre,
+            'idOffre'=>$idOffre,
+            'descriptionOffre'=>$descriptionOffre,
             'dateOffre'=>date('y-m-d'),
-            'idService'=>$descriptionOffre,
+            'idService'=>$idservice,
             'idUser'=>$user);
             $this->db->insert('offre', $data);
             
     }
 
 
-    function afficherlesservice()
+    function afficherlesservices()
     {
         $sql=$this->db->query('select idService,nomService from service');
         return $sql->result();

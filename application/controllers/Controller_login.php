@@ -1,16 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Page Title</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-</head>
-</html>
-
-
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -39,12 +27,18 @@ class Controller_login extends CI_Controller {
 					if( count($info['connexion'])!=0)
 					{	
 						$this->load->library('session');
+
 					$info = (array) $info['connexion'][0];
 					$idUser=$info['idUser'];
+					$nomUser=$info['nomUser'];
+					$photoUser=$info['photoUser'];
 					$this->session->set_userdata('idUser',$idUser);
 					$user=$this->session->userdata('idUser');
-		
-					
+					$this->session->set_userdata('nomUser',$nomUser);
+					$nom=$this->session->userdata('nomUser');
+					$this->session->set_userdata('photoUser',$photoUser);
+					$photo=$this->session->userdata('photoUser');
+				
 					 header('location:'.base_url().'index.php/Controller_login/utilisateur/'.$user);		
 					}
 					else
@@ -75,7 +69,7 @@ class Controller_login extends CI_Controller {
 
 	public function inscriptions()
 	{
-		$this->load->view('inscriptions');				
+				
 
 			if(isset($_POST['btnInscriptions']))
 			{
@@ -94,9 +88,11 @@ class Controller_login extends CI_Controller {
 						{
 							if(!empty($_POST['txtMdp']))
 							{
-								
+								$this->load->library('session');
+
 								$this->load->model('M_Login');
 								$info['newtest'] = $this->M_Login->inscription($idUser,$nomPrenom,$login,$motDePasse,$photo);
+
 								header('location:'.base_url().'index.php/Controller_login/index');	
 							}
 							else
@@ -123,6 +119,7 @@ class Controller_login extends CI_Controller {
 					$this->load->view('inscriptions',$data);				
 				}
 			}
+			$this->load->view('inscriptions');		
 			if(isset($_POST['btnRetour']))
 			{
 				header('location:'.base_url().'index.php/Controller_login/index/');
@@ -130,15 +127,26 @@ class Controller_login extends CI_Controller {
 		
 	}
 
+public function deconnexion()
+{
+	$this->session->sess_destroy();
+	header('location:'.base_url().'index.php/Controller_login/');	
+
+}
 
 
 
-
-	public function utilisateur($idUser)
+	public function utilisateur($idDeal)
 	{	
 		$this->load->model('M_demande');
-		$data['lesDemandes'] = $this->M_demande->getAllDemandes($idUser);
-		$data['lesOffres'] = $this->M_demande->getAllOffre($idUser);
+		$this->load->library('session');
+	
+		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
+		$data['lesOffres'] = $this->M_demande->getAllOffre();
+		$data['lesDeals'] = $this->M_demande->getAllDeal();
+		$data['DealsService'] = $this->M_demande->getAllDealService($idDeal);
+		
+		
 		$this->load->view('compte_Utilisateur',$data);
 	}
 }
