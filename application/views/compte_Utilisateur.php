@@ -15,7 +15,7 @@ $this->load->library('session');
         <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
         <link href="<?php echo base_url();?>./CSS/style_accueil.css" rel="stylesheet">  
-        <link href="<?php echo base_url();?>./CSS/style.css" rel="stylesheet">    
+          
         <script type="text/javascript">
         $(
             function()
