@@ -35,6 +35,7 @@ class C_creationOffre extends CI_Controller
         }
         else
         {   
+ //je sais pas pk lorsque la page se rafraichit les services disparaissent alors que je charge bien la requete pour les afficher
           $insereOffre['insererOffre']=$this->M_Offre->M_insererOffre($descriptionOffre,$idservice);           
           $this->load->view('creationOffre',$insereOffre,$service);
           header('location:'.base_url().'index.php/Controller_login/utilisateur/');     
