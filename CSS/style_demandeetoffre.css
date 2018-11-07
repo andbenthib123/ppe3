@@ -1,3 +1,5 @@
+
+
 input[type=text], select {
     width: 30%;
     padding: 10px 20px;
@@ -67,4 +69,36 @@ textarea
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+}
+
+
+
+.gauche {
+   
+	width: 40%;
+	height: 470px;
+    float: left;
+    background-color: rgb(0, 102, 255);
+
+}
+
+.partieGauche
+{
+    margin-left: 30px;
+}
+#txtRecherche
+{
+    width: 1500px;
+    height: 30px;
+    border: none;
+    margin: 0px;
+   color: white;
+    background-color: rgb(113, 189, 240);
+}
+
+.bas
+{
+    
+float: left;
+    background-color: rgb(0, 102, 255);
 }

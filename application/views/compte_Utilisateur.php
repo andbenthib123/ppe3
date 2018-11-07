@@ -99,7 +99,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h2>';
+     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeal/">+</a></h2>';
      echo '</div>';
      echo '<br>';
      foreach($lesDeals as $unDeal)
