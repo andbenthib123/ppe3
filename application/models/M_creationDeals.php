@@ -25,9 +25,10 @@ public function getAllDemandes()
        return $query->result();
     }
 
-    public function getRecherche()
+    public function getRecherche($txtRecherche)
     {
-    
-    }
+    $query=$this->db->query("SELECT offre.descriptionOffre, user.nomUser user from user,offre WHERE offre.idUser=user.idUser and offre.descriptionOffre like '".$txtRecherche."'");
+return $query->result();   
+}
   
 }?>

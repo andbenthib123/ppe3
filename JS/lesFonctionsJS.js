@@ -19,7 +19,6 @@ function insereDemandeAjax()
     );
 }
 
-
 function insereOffreAjax()
 {
 
@@ -36,4 +35,28 @@ function insereOffreAjax()
     }        
         }
     );
+}
+
+function barrerecherche(txtRecherche)
+{
+$.ajax
+(
+{
+    type:'get',
+    URL:'index.php/C_creationsDeal/afficherLesUsers',
+    data:"txtRecherche="+txtRecherche,
+    success: function(data)
+    {
+        $('#afficherUsers').empty();
+        $('#afficherUsers').append(data);
+    },
+    error:function()
+    {
+        alert('erreur sql');
+    }
+}
+
+
+)
+
 }

@@ -130,6 +130,7 @@ class Controller_login extends CI_Controller {
 public function deconnexion()
 {
 	$this->load->library("session");
+	$this->session->unset_userdata('idUser');
 	$this->session->sess_destroy();
 $this->load->view("index");	
 }			

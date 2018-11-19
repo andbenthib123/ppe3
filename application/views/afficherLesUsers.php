@@ -21,48 +21,15 @@ $this->load->library('session');
     
 </head>
 <body>
- 
-<div>
-<input type="search" autocomplete="on" name="txtRecherche" onclick="barrerecherche(txtRecherche)" id="txtRecherche" placeholder="saisir le texte recherché dans une offre">
-</div>
-
-<div class="gauche">
-<div class="partieGauche">
-   
-<h2>Mes Demandes</h2>
-
-<?php 
-
-foreach($lesDemandes as $UneDemande)
-{
-    echo"<option>";
-    echo $UneDemande->descriptionDemande;
-   
-        echo "</option>";
+    <?php
+foreach($lesUsers as $unUser)
+{ 
+    echo"<div>'".$unUser->user."'</div>";
+    
 }
-
 ?>
-    <h2>mes Offres</h2>
-    <?php 
-foreach($lesOffres as $UneOffre)
-{
-    echo"<option>";
-    echo $UneOffre->descriptionOffre;
-   
-        echo "</option>";
-}
 
-?>
-</div>
-</div> 
-  
-  
-  <div id='afficherUsers'>
-  
-  </div>
-   
-
-      
+    
 
 </body>
 </html>
