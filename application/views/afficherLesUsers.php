@@ -12,7 +12,6 @@ $this->load->library('session');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="<?php echo base_url();?>./JQuery/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctionsJS.js"></script>
     <script src="<?php echo base_url();?>./Bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>./Bootstrap/js/bootstrap.js"></script>
     <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -22,11 +21,12 @@ $this->load->library('session');
 </head>
 <body>
     <?php
-foreach($lesUsers as $unUser)
-{ 
-    echo"<div>'".$unUser->user."'</div>";
+//foreach($lesUsers as $unUser)
+//{ 
+  //  echo"<div>'".$unUser->user."'</div>";
     
-}
+//}
+echo"ok";
 ?>
 
     

@@ -1,23 +1,41 @@
 
-function insereDemandeAjax()
-{
+
+      function barreRecherche()
+{  
+
     $.ajax
     (
         {
-            type:"get",
-            URL:"index.php/C_creationDemande/insererFormulaire",
-            data:"txtDescriptions="+$('#txtDescriptions').val()+"txtSelect="+$('#txtSelect').val()+"idDemande="+$('#txtidDemande').val(),
-            success:function(data)
+            type:"GET",
+            URL:"index.php/C_creationsDeal/afficherLesUsers",
+            data:"recherche="+$('#txtRecherche').val(),
+            success: function(data)
     {
-   if($('#txtDescriptions').val()=="")
-   {
-    alert('remplir tout les champs');
-   }
+        if (data.length = 0)
+        {
+            $('#afficherUsers').empty(data);
+            
+            $('#afficherUsers').hide(data);
+        
+        
+        }
+        else
+        {
+$('#afficherUsers').append(data);
+        }
+
+},
+error:function(data)
+{
+alert('erreur sql');
+}
    //savoir si il a tout selectionne 
-    }
+
         }
     );
 }
+    
+    
 
 function insereOffreAjax()
 {
@@ -37,26 +55,3 @@ function insereOffreAjax()
     );
 }
 
-function barrerecherche(txtRecherche)
-{
-$.ajax
-(
-{
-    type:'get',
-    URL:'index.php/C_creationsDeal/afficherLesUsers',
-    data:"txtRecherche="+txtRecherche,
-    success: function(data)
-    {
-        $('#afficherUsers').empty();
-        $('#afficherUsers').append(data);
-    },
-    error:function()
-    {
-        alert('erreur sql');
-    }
-}
-
-
-)
-
-}

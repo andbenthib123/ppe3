@@ -23,11 +23,12 @@ $this->load->library('session');
 <body>
  
 <div>
-<input type="search" autocomplete="on" name="txtRecherche" onclick="barrerecherche(txtRecherche)" id="txtRecherche" placeholder="saisir le texte recherché dans une offre">
+
+<input type='text' name='txtRecherche' onclick="barreRecherche()"   id='txtRecherche' placeholder='saisir le texte recherché dans une offre'>
+
 </div>
 
-<div class="gauche">
-<div class="partieGauche">
+<div>
    
 <h2>Mes Demandes</h2>
 
@@ -35,10 +36,9 @@ $this->load->library('session');
 
 foreach($lesDemandes as $UneDemande)
 {
-    echo"<option>";
-    echo $UneDemande->descriptionDemande;
+    echo $UneDemande->descriptionDemande."<br>";
    
-        echo "</option>";
+      
 }
 
 ?>
@@ -46,18 +46,17 @@ foreach($lesDemandes as $UneDemande)
     <?php 
 foreach($lesOffres as $UneOffre)
 {
-    echo"<option>";
-    echo $UneOffre->descriptionOffre;
+      
+     echo $UneOffre->descriptionOffre."<br>";
    
-        echo "</option>";
 }
 
 ?>
-</div>
+
 </div> 
   
   
-  <div id='afficherUsers'>
+  <div id="afficherUsers">
   
   </div>
    
