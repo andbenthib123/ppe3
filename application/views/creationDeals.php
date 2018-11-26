@@ -1,7 +1,3 @@
-<?php
-$this->load->library('session');
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +20,7 @@ $this->load->library('session');
  
 <div>
 
-<input type='text' name='txtRecherche' onclick="barreRecherche()"   id='txtRecherche' placeholder='saisir le texte recherché dans une offre'>
+<input type='search' name='txtRecherche' onkeyup='barreRecherche()'   id='txtRecherche' placeholder='saisir le texte recherché dans une offre'>
 
 </div>
 
