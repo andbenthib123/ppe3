@@ -1,29 +1,49 @@
-
       function barreRecherche()
 {  
     $.ajax
     (
         {
             
-            type:"GET", 
-            URL:"index.php/C_creationsDeal/afficherLesUsers",
+            type:"get", 
+            URL:"index.php/C_creationsDeals/afficherLesUsers/",
             data:"recherche="+$('#txtRecherche').val(),
             success: function(data)
             {
         
-                $('#afficherUsers').empty();
+                $('#lesUsers').empty();
             
             
-                $('#afficherUsers').append(data);
+                $('#lesUsers').append(data);
         
-            },
-        
+            },       
             error:function()
             {
             alert('erreur sql');
             }
-            //savoir si il a tout selectionne 
+        }
+    );
+}
 
+
+
+
+function noteDeals()
+{  
+    $.ajax
+    (
+        {
+            
+            type:"get", 
+            URL:"index.php/C_creationsDeals/noteDeals/",
+            data:"",
+            success: function()
+            {
+        
+               
+            },       
+            error:function()
+            {
+            }
         }
     );
 }

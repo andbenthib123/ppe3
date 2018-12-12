@@ -135,8 +135,6 @@ public function deconnexion()
 $this->load->view("index");	
 }			
 
-
-
 	public function utilisateur()
 	{	
 		$this->load->model('M_demande');
@@ -145,7 +143,6 @@ $this->load->view("index");
 		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
 		$data['lesOffres'] = $this->M_demande->getAllOffre();
 		$data['lesDeals'] = $this->M_demande->getAllDeal();
-
 		$this->load->view('compte_Utilisateur',$data);
 	}
 }
