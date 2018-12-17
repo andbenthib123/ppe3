@@ -1,0 +1,90 @@
+.menu a
+{
+    float: right;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.header
+{
+    height:50px;
+    line-height:35px;
+    background-color: rgb(216, 63, 29)   ;
+}
+
+.p
+{
+    float: left;
+    font-weight: bold;
+    margin-right: 20px;
+    color: rgba(158, 157, 157, 0.932)
+}
+a
+{
+    color: rgba(158, 157, 157, 0.932);
+}
+.centre
+{
+    text-align: center;
+}
+.body
+{
+    background-color: #F1EAE4;
+    
+}
+
+#divDealR
+{
+    background-color: red;
+   
+}
+#divDealV
+{
+    background-color: green;
+
+}
+.demande
+{
+    width: 310px; border-bottom: 2px solid rgb(216, 63, 29) ;
+}
+.corps
+{
+    margin: 10px; display: inline-block; width: 340px; height: 150px; border-style: solid; border-color:  rgba(110, 110, 110, 0.932);
+}
+
+.corpsDeal
+{
+    margin: 10px; display: inline-block; width: 240px; height: 315px; border-style: solid; border-color:  rgba(110, 110, 110, 0.932);
+
+}
+
+.fondDemande
+{
+    width: 270px; border-bottom: 2px solid  rgb(216, 63, 29)  ;
+}
+h2
+{
+    color: rgba(110, 110, 110, 0.932);
+}
+
+.photoCorps
+{
+    height: 100px;
+    width: 100px;
+}
+.photoheader
+{
+    height: 40px;
+    width: 40px;
+}
+.lienplus
+{
+    width: 40px;
+    position: absolute;
+    text-align: center;
+    
+    border-radius: 500%;     
+    
+    background-color:   rgb(216, 63, 29)  ;
+    
+}

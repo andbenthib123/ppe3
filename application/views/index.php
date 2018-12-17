@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
     <title>Accueil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="<?php echo base_url();?>JS/lesfonction.js"></script>
@@ -85,5 +86,59 @@
      echo '</div>';     
      
     ?>
+=======
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         
+         <script src="<?php echo base_url();?>./JQuery/jquery-3.1.1.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctionsJS.js"></script>
+        <script src="<?php echo base_url();?>./Bootstrap/js/bootstrap.js"></script>
+        <script src="<?php echo base_url();?>./Bootstrap/js/bootstrap.min.js"></script>
+        <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>./CSS/style.css" rel="stylesheet">
+   
+
+     
+</head>
+<body>
+<div class="login">
+
+<form method='POST' action="<?php echo base_url()?>index.php/Controller_login/login">
+
+    <div class="form-group">
+    <h2>connectez-vous!</h2><br>
+    <?php
+    if(isset($login))
+    {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un login </p>";    
+    }
+    else
+    {
+        if(isset($motdepasse))
+        {
+      echo  "<p id='txtmessageAlert' class='alert alert-danger '> veuillez mettre un mot de passe</p>";
+        }
+        else
+        {
+            if(isset($compte))
+            {
+          echo  "<p id='txtmessageAlert' class='alert alert-danger '>mot de passe ou identifiant incorrect</p>";
+            }
+        }
+    }
+?>
+    <input type="text" placeholder="login"  class=" input form-control" name="txtUser" id="txtUser"><br>
+    <input type="password" placeholder="mot de passe" class="input form-control" name="txtMdp" id="txtMdp"><br>
+  
+    <input type="submit" class="btn btn-primary btn-block btn-large" name="btnValider" id="btnValider" value="valider"><br>
+    <a class="inscrire" style="text-decoration:none;" href="<?php echo base_url()?>index.php/Controller_login/inscriptions">inscris toi</a>
+
+    <div>
+</form>
+
+<div>
+
+>>>>>>> c03bdc8f95af9d9c9e0f18e6d1a55f26068124bc
 </body>
 </html>
