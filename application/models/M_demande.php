@@ -37,19 +37,6 @@ public function getAllDemandes()
          and deal.idCreateur='".$idUser."'");
         return $query->result();   
     }
-
-    public function testAllDeal($idMonDeal)
-    {
-        $this->load->library('session');
-        $idUser=$this->session->userdata('idUser');
-        $query=$this->db->query("
-        select user.nomUser FROM user,deal,offre WHERE
-    deal.idOffreUser2=offre.idOffre AND offre.idUser=user.idUser
-     AND deal.idDeal='".$idMonDeal."'
-    AND deal.idOffreUser2='".$idoffreUser2."'");
-        return $query->result();   
-    }
-
     public function getAllDeals($idMonDeal)
     {
         $this->load->library('session');
@@ -63,7 +50,6 @@ public function getAllDemandes()
          and deal.idCreateur='".$idUser."'");
         return $query->result();   
     }
-
     public function getAllDealService()
     {
         $this->load->library('session');

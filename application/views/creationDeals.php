@@ -11,7 +11,7 @@
     <script src="<?php echo base_url();?>Bootstrap/js/bootstrap.js"></script>
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
-    <link href="<?php echo base_url();?>CSS/style_demandeetoffre.css" rel="stylesheet">  
+    <link href="<?php echo base_url();?>CSS/deal.css" rel="stylesheet">  
     
 </head>
 <body>
@@ -24,8 +24,9 @@
 <?php 
 foreach($lesDemandes as $UneDemande)
 {
-    echo"<div id='".$UneDemande->idDemande."'>";
-    echo $UneDemande->descriptionDemande."<br>";
+    echo"<div onclick='recupOffre(".$UneDemande->idDemande.",".$UneDemande->idService.")' class='divDemande' name='".$UneDemande->idDemande."' id='".$UneDemande->idDemande."'>";
+    echo "<p>".$UneDemande->nomService."</p>";
+    echo "<p>".$UneDemande->descriptionDemande."</p>";
     echo"</div>";
 }
 ?>
@@ -33,16 +34,22 @@ foreach($lesDemandes as $UneDemande)
     <?php 
 foreach($lesOffres as $UneOffre)
 {
-      echo"<div id='".$UneOffre->idOffre."'>";
-      echo $UneOffre->descriptionOffre."<br>";
+      echo"<div onclick='recupDemande(".$UneOffre->idOffre.",".$UneOffre->idService.")' class='divDemande'  name='".$UneOffre->idOffre."' id='".$UneOffre->idOffre."'>";
+      echo "<p>".$UneOffre->nomService."</p>";
+      echo "<p>".$UneOffre->descriptionOffre."</p>";
       echo"</div>";
 }
 
 ?>
-
+<br><br><br>
 </div> 
-  <div id='lesUsers'>
-  </div>
-   
+<div id='lesUsers'>
+</div>
+   <br>
+<div id="demOffreUserSelectionne">
+</div>
+
+<input type="submit" value='creer' name='txtCreer' onclick='ajouterDeals()' id='txtCreer'>
+
 </body>
 </html>

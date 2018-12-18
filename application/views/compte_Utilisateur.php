@@ -58,7 +58,7 @@ $this->load->library('session');
 <a href='#demande' >Demande &nbsp;|</a>
 <a href='#offre' >Offre &nbsp;|</a>
 <a href='<?php base_url();?>utilisateur' >Home &nbsp;|</a>
-<nav>
+    </nav>
 </div>
 </header>
     <?php
@@ -99,7 +99,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/index">+</a></h2>';
+     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/">+</a></h2>';
      echo '</div>';
      echo '<br>';
      foreach($lesDeals as $unDeal)
@@ -119,7 +119,7 @@ if($unDeal->idEtat ==1)
     }
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
-    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>'";
+    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>";
      echo '</div>';
 }
 else
@@ -138,7 +138,7 @@ else
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
 
-    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>'";
+    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>";
      echo '</div>';
         }
     }

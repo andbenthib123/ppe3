@@ -137,6 +137,7 @@ $this->load->view("index");
 
 	public function utilisateur()
 	{	
+		
 		$this->load->model('M_demande');
 		$this->load->library('session');
 		$data['serviceUser2'] = $this->M_demande->getAllDealService();

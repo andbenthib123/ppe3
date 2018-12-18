@@ -1,31 +1,40 @@
  
 <?php
-
 class C_creationsDeals extends CI_Controller
 {
 
-   
 public function index()
 { 
-
     $this->load->model('M_creationDeals');
-    
     $data['lesDemandes']=$this->M_creationDeals->getAllDemandes();
     $data['lesOffres']=$this->M_creationDeals->getAllOffre();
     $this->load->view('creationDeals',$data);
-
 }
+
 
 public function afficherLesUsers()
 {
+$this->load->model('M_creationDeals');
 $txtrecherche=$_GET['recherche'];
-
-    $this->load->model('M_creationDeals');
-    $data['user']=$this->M_creationDeals->getRecherche($txtrecherche);
-   $this->load->view("afficherLesUsers",$data);
-   
+$data['user']=$this->M_creationDeals->getRecherche($txtrecherche);
+$this->load->view("afficherLesUsers",$data);
 }
 
+
+public function demOffreUserSelectionne()
+{ 
+$this->load->model('M_creationDeals');
+$data['DemandeSelectionne']=$this->M_creationDeals->DemandeUserSelectionne($_GET['offreDemande']);
+$data['offreSelectionne']=$this->M_creationDeals->offreUserSelectionne($_GET['offreDemande']);
+$this->load->view("demandeOffreUserSelectionne",$data);
+
+}
+
+public function ajouterDeals()
+    {
+        $this->load->model("M_creationsDeals");
+        $data['ajoutDeals'] = $this->M_creationsDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
+    }
 
 public function noteDeals($idMonDeal)
 {
