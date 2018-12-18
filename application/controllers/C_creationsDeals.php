@@ -32,8 +32,8 @@ $this->load->view("demandeOffreUserSelectionne",$data);
 
 public function ajouterDeals()
     {
-        $this->load->model("M_creationsDeals");
-        $data['ajoutDeals'] = $this->M_creationsDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
+        $this->load->model("M_creationDeals");
+        $data['ajoutDeals'] = $this->M_creationDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
     }
 
 public function noteDeals($idMonDeal)

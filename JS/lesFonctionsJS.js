@@ -1,6 +1,6 @@
       function barreRecherche()
 {  
-   if($('#txtRecherche').val().length>"3")
+   if($('#txtRecherche').val().length>"2")
    {
         $.ajax
         (
@@ -67,7 +67,7 @@ function selectAll(tousRecup,idService)
 
 function ajouterDeals()
 {
-    if(MonServiceDemande == serviceSonOffre && MonServiceOffre == serviceSaDemande)
+    if(MonServiceDemande != serviceSonOffre && MonServiceOffre != serviceSaDemande)
     {
         if(idMaDemande!=idSonOffre && idMonOffre!=idSaDemande)
         {
@@ -96,7 +96,7 @@ function ajouterDeals()
     }
     else
     {
-        if(MonServiceDemande != serviceSonOffre)
+        if(MonServiceDemande == serviceSonOffre)
         {
             alert("L'offre choisie ne correspond à aucune de vos demandes");
         }

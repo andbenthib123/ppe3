@@ -47,13 +47,15 @@ public function OffreUserSelectionne($idleUser)
 return $query->result();
 }
 
-public function insertDeal($idOffreUser1, $idOffreUser2)
+public function ajouterDeals($idOffreUser1, $idOffreUser2)
     {
         $this->load->library('session');
         $idUser=$this->session->userdata('idUser');
-
-        $sql = $this->db->query("INSERT INTO deal (dateDeal, noteUser1, noteUser2, idOffreUser1, idOffreUser2, idEtat, idCreateur)
+    $sql = $this->db->query("INSERT INTO deal (dateDeal, noteUser1, noteUser2, idOffreUser1, idOffreUser2, idEtat, idCreateur)
         VALUES (CURRENT_DATE(), 0, 0, ".$idOffreUser1.", ".$idOffreUser2.", 1, ".$idUser.")");
+            
+
+       
     }
 
 
