@@ -19,37 +19,40 @@
 <div>
 <input type='search' name='txtRecherche' onkeyup='barreRecherche()' id='txtRecherche' placeholder='saisir le texte recherché dans une offre'>
 </div>
-<div>
-<h2>Mes Demandes</h2>
+<center>
+<h2 id="milieux">Mes Demandes</h2>
 <?php 
 foreach($lesDemandes as $UneDemande)
 {
-    echo"<div onclick='recupOffre(".$UneDemande->idDemande.",".$UneDemande->idService.")' class='divDemande' name='".$UneDemande->idDemande."' id='".$UneDemande->idDemande."'>";
+    echo"<div onclick='recupOffre(".$UneDemande->idDemande.",".$UneDemande->idService.")' class='mesDemandes' name='".$UneDemande->idDemande."' id='".$UneDemande->idDemande."'>";
     echo "<p>".$UneDemande->nomService."</p>";
     echo "<p>".$UneDemande->descriptionDemande."</p>";
     echo"</div>";
 }
 ?>
-    <h2>mes Offres</h2>
+</center>
+<center>
+    <h2 id='milieux'>mes Offres</h2>
     <?php 
 foreach($lesOffres as $UneOffre)
 {
-      echo"<div onclick='recupDemande(".$UneOffre->idOffre.",".$UneOffre->idService.")' class='divDemande'  name='".$UneOffre->idOffre."' id='".$UneOffre->idOffre."'>";
+      echo"<div onclick='recupDemande(".$UneOffre->idOffre.",".$UneOffre->idService.")' class='mesOffres'  name='".$UneOffre->idOffre."' id='".$UneOffre->idOffre."'>";
       echo "<p>".$UneOffre->nomService."</p>";
       echo "<p>".$UneOffre->descriptionOffre."</p>";
       echo"</div>";
 }
-
 ?>
+</center>
+
 <br><br><br>
-</div> 
+
 <div id='lesUsers'>
 </div>
    <br>
 <div id="demOffreUserSelectionne">
 </div>
-
-<input type="submit" value='creer' name='txtCreer' onclick='ajouterDeals()' id='txtCreer'>
-
+<center>
+<input type="submit" value='creer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
+</center>
 </body>
 </html>

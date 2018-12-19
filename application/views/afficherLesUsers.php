@@ -12,37 +12,25 @@
         <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
         <link href="<?php echo base_url();?>./CSS/deal.css" rel="stylesheet">  
 
-        <script type="text/javascript">
-        $
-        (
-            function()
-            {
-                $('.ok').click
-                (
-                    function()
-                    {
-                        demOffreUserSelectionne(($(this).children('img').attr('value')));
-                    }
-                );
-            }
-        );
+       
         
-        </script>
           
 </head>
 <body>
     <?php 
     foreach($user as $leUser)
  {
+     echo"<div id='divPhoto'>";
+     
      echo"<div class='ok' onclick='demOffreUserSelectionne(".$leUser->idUser.",".$leUser->idService.")'>";
 echo"<div class='div'>";
-echo"<div>";
+
     echo"<img class='photoDeals'  value='".$leUser->idUser."'  src='".$leUser->photoUser."' >";
-    echo"</div>";
+    
     echo"<p>".$leUser->nomUser."</p>";
     echo"</div>";
     echo"</div>";
-
+echo"</div>";
 
 
 

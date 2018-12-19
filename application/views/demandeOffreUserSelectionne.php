@@ -24,10 +24,10 @@ $this->load->library('session');
 
 <h3>ses offres</h3>
 <?php
-  echo"<div ' class='col-md-4 freetdemande'>";
+  echo"<div>";
 foreach($offreSelectionne as $uneOffre)
 {
-  echo"<div onclick='selectOffreDemande(".$uneOffre->idOffre.",".$uneOffre->idService.")' name='".$uneOffre->idOffre."' id='divOffre'>";
+  echo"<div onclick='selectOffreDemande(".$uneOffre->idOffre.",".$uneOffre->idService.")' name='".$uneOffre->idOffre."' class='mesOffres'>";
   echo"<p>".$uneOffre->nomService."</p>";
   echo"<p >".$uneOffre->descriptionOffre."</p>";
   echo"</div>";
@@ -38,7 +38,7 @@ foreach($offreSelectionne as $uneOffre)
 <?php
 foreach($DemandeSelectionne as $uneDemande)
 {
-  echo"<div  onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' id='divDemande'>";
+  echo"<div  onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' class='mesDemandes'>";
   echo"<p>".$uneDemande->nomService."</p>";
   echo"<p>".$uneDemande->descriptionDemande."</p>";
   echo"</div>";

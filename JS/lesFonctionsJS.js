@@ -37,14 +37,20 @@ var idSonOffre;
 var serviceSonOffre;
 var idSaDemande;
 var serviceSaDemande
+
+    
 function recupOffre(idDeOffre,idService)
 {
+
     idMonOffre=idDeOffre;
     MonServiceOffre=idService;
     console.log(idDeOffre,idService);
+
 }
 function recupDemande(idDeDemande,idService)
 {
+    
+
     idMaDemande=idDeDemande;
     MonServiceDemande=idService;
     console.log(idDeDemande,idService);
