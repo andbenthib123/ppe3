@@ -91,8 +91,20 @@ public function lienDeal()
 $query=$this->db->query("select offre.idOffre from offre where offre.idUser='1' and exists(select demande.idDemande from demande where offre.idOffre=demande.idDemande and demande.idUser='1')");
 }
 
+public function updateNote($note1)
+{
+    $this->load->library('session');
+    $idDeals=$this->session->userdata('idDeal');
+    
+    $sql = $this->db->query("update deal set noteUser1='".$note1."' where idDeal='".$idDeals."'");
+}
 
-
+public function updateNote2($note2)
+{
+    $this->load->library('session');
+    $idDeals=$this->session->userdata('idDeal');
+    $sql = $this->db->query("update deal set noteUser2='".$idDeals."' where idDeal='".$idDeals."'");
+}
 
 
 

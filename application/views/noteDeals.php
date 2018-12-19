@@ -13,8 +13,7 @@
         <link href="<?php echo base_url();?>./CSS/style_demandeetoffre.css" rel="stylesheet">     
 </head>
 <body>
-<form method="get">
-    <h3>numero du deal</h3>
+<form method="get" action="<?php echo base_url(); ?>index.php/C_creationsDeals/modifNote">
     <input disabled value="<?php echo $_SESSION['idDeal'];?>" type="text" name="txtIdDeal">
     <h3>votre service</h3>
     <input disabled type="text" value="<?php echo$_SESSION['nomService'];?>" name="txtService">
@@ -24,11 +23,11 @@
     <input value="<?php echo$_SESSION['noteUser1'];?>" type="text" name="txtMaNote">
     <h3> la note de:<?php echo$_SESSION['nomUser'];?></h3>
     <input disabled value="<?php echo$_SESSION['noteUser2'];?>" type="text" name="txtSaNote"><br>
-<input type="submit" value="valider"  name="btnValider">
+<input type="submit" value="valider" class='btnCreation' name="btnValider">
 
 </form>
 <form methode='GET' action="<?php echo base_url()?>index.php/Controller_login/utilisateur">
-    <input class='btnCreation' type='submit' name='btnHome' value='retour'>
+    <input class='btnCreationRetour' type='submit' name='btnHome' value='retour'>
     </form>
 
 

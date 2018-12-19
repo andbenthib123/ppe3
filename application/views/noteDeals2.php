@@ -13,7 +13,7 @@
         <link href="<?php echo base_url();?>./CSS/style_demandeetoffre.css" rel="stylesheet">     
 </head>
 <body>
-<form method="get">
+<form method="get" action="<?php echo base_url(); ?>index.php/C_creationsDeals/modifNote2">
     <h3>numero du deal</h3>
     <input disabled value="<?php echo $_SESSION['idDeal'];?>" type="text" name="txtIdDeal">
     <h3>votre service</h3>

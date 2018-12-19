@@ -20,15 +20,14 @@ public function modifDemande($idMaDemande)
    public function enregisterModifDemande()
    {
 
-	
-        $this->load->model('M_modifDemande');
-        $descriDemande = $this->input->post('descri');
-        $dateDemande = $this->input->post('dateDem');
+       $this->load->model('M_modifDemande');
+       $descriDemande = $this->input->post('descri');
+       $dateDemande = $this->input->post('dateDem');
        $setAllDemande['setAllDemande']= $this->M_modifDemande->setAllModifDemande($descriDemande,$dateDemande);
        $data['modifierMaDemande'] = $this->M_modifDemande->getAllModifDemande($idMaDemande);
-       header('location:'.base_url().'index.php/Controller_login/utilisateur/');     
+       header('location:'.base_url().'index.php/Controller_login/utilisateur/'); 
        
-    }
+   }
 
 
     //function retour pour retourne a l'accueil

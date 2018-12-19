@@ -13,6 +13,32 @@
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
     <link href="<?php echo base_url();?>CSS/deal.css" rel="stylesheet">  
     
+    <script type="text/javascript">
+     $(
+       function()
+       {
+
+        $(".mesDemandes").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+    
+        
+        $(".mesOffres").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+    
+        $(".mesOffres").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+     }
+     )
+        </script>
 </head>
 <body>
  
@@ -54,5 +80,12 @@ foreach($lesOffres as $UneOffre)
 <center>
 <input type="submit" value='creer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
 </center>
+
+<form methode="get" action="<?php echo base_url(); ?>index.php/Controller_login/utilisateur/retour">
+<center>
+<input type="submit" value='retour' name='txtRetour' class='btnCreationRetour' id='txtCreer'>
+</center>
+</form>
+
 </body>
 </html>

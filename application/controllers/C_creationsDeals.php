@@ -34,6 +34,7 @@ public function ajouterDeals()
     {
         $this->load->model("M_creationDeals");
         $data['ajoutDeals'] = $this->M_creationDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
+        header('location:'.base_url().'index.php/Controller_login/utilisateur/');
     }
 
 public function noteDeals($idMonDeal)
@@ -85,7 +86,22 @@ public function noteDeals2($idMonDeal)
     $this->load->view("noteDeals2",$data);
 
 }
+public function modifNote()
+{
+    $this->load->model("M_creationDeals");
+    $note1=$this->input->get('txtMaNote');
 
+    $data['updateNote']=$this->M_creationDeals->updateNote($note1);
+    header('location:'.base_url().'index.php/Controller_login/utilisateur/');
+}
+public function modifNote2()
+{
+    $this->load->model("M_creationDeals");
+    $note2=$this->input->get('txtMaNote');
+
+    $data['updateNote2']=$this->M_creationDeals->updateNote2($note2);
+    header('location:'.base_url().'index.php/Controller_login/utilisateur/');
+}
 }
 
 ?>

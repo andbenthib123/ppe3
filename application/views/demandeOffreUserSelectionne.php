@@ -38,7 +38,7 @@ foreach($offreSelectionne as $uneOffre)
 <?php
 foreach($DemandeSelectionne as $uneDemande)
 {
-  echo"<div  onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' id='mesDemandes'>";
+  echo"<div  onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' class='mesDemandes'>";
   echo"<p>".$uneDemande->nomService."</p>";
   echo"<p>".$uneDemande->descriptionDemande."</p>";
   echo"</div>";

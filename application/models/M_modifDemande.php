@@ -16,7 +16,6 @@ public function getAllModifDemande($idMaDemande)
 public function setAllModifDemande($descriDemande,$dateDemande)
     {
         $this->load->library('session');
-
         $idDem=$this->session->userdata('idDemande');
         $sql = $this->db->query("update demande set descriptionDemande ='".$descriDemande."',dateDemande='".$dateDemande."' where idDemande='".$idDem."'");
     }
