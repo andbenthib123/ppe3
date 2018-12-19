@@ -1,0 +1,130 @@
+.div
+{
+    display: inline-block;
+    float:left;
+  
+}
+.mesDemandes
+{
+   
+   height: 100px;
+   width: 250px;
+   border: blue solid 2px;
+   display: table-cell;
+   margin-left: 20px;
+   padding-left: 20px;
+   
+}
+
+.btnCreationRetour
+{
+    width: 30%;
+    background-color: rgb(23, 74, 216);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.btnCreation:hover
+{
+    background-color: #45a049;
+
+}
+
+
+.div {
+    border-radius: 5px;
+    
+    padding: 20px;
+    text-align: center;
+}
+
+.button
+{
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 47px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.mesOffres
+{
+    text-align: center;
+    margin-left: 20px;
+   padding: 10px;
+    display: table-cell;
+    border: blue solid 2px;
+
+}
+#milieux
+{
+text-align: center;
+padding-top: -150px;
+
+}
+
+.ok
+{
+margin-right: 20px;
+    text-align: center;
+   height: 85px;
+   width: 200px;
+   display:inline-block;
+}
+
+
+.photoDeals
+{
+
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    height:20%;
+    width: 20%;
+   
+}
+#divPhoto
+{
+    display:inline-block;
+
+}
+#lesUsers
+{
+    background-color: blue;
+}
+
+#txtRecherche
+{
+    width: 1500px;
+    height: 30px;
+    border: none;
+    margin: 0px;
+   color: white;
+    background-color: rgb(113, 189, 240);
+}
+
+textarea 
+{
+    width: 30%;
+    height: 120px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+
+.partieGauche
+{
+    margin-left: 30px;
+}

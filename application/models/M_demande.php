@@ -29,10 +29,23 @@ public function getAllDemandes()
     {
         $this->load->library('session');
         $idUser=$this->session->userdata('idUser');
-        $query=$this->db->query("select deal.idEtat,service.nomService,user.photoUser,deal.noteUser1,deal.noteUser2,deal.idDeal ,deal.dateDeal,offre.idUser,user.nomUser 
+        $query=$this->db->query("select deal.idDeal as idDeal,deal.idEtat,service.nomService,user.photoUser,deal.noteUser1,deal.noteUser2,deal.idDeal ,deal.dateDeal,offre.idUser,user.nomUser 
+        from service,user,deal,offre 
+        where service.idService=offre.idService
+         and  user.idUser=offre.idUser      
+         and offre.idOffre=deal.idOffreUser2 
+         and deal.idCreateur='".$idUser."'");
+        return $query->result();   
+    }
+    public function getAllDeals($idMonDeal)
+    {
+        $this->load->library('session');
+        $idUser=$this->session->userdata('idUser');
+        $query=$this->db->query("select deal.idDeal as idDeal,deal.idEtat,service.nomService,user.photoUser,deal.noteUser1,deal.noteUser2,deal.idDeal ,deal.dateDeal,offre.idUser,user.nomUser 
         from service,user,deal,offre 
         where service.idService=offre.idService
          and  user.idUser=offre.idUser 
+        and idDeal='".$idMonDeal."'
          and offre.idOffre=deal.idOffreUser2 
          and deal.idCreateur='".$idUser."'");
         return $query->result();   
@@ -41,8 +54,8 @@ public function getAllDemandes()
     {
         $this->load->library('session');
         $idUser=$this->session->userdata('idUser');
-        $sql = $this->db->query("SELECT deal.idDeal, deal.dateDeal, deal.noteUser1, deal.noteUser2, user.nomUser, service.nomService, user.photoUser
-        FROM deal, user, offre, etat, service
+        $sql = $this->db->query("SELECT deal.idDeal, deal.dateDeal, deal.noteUser1, deal.noteUser2, user.nomUser, service.nomService as service2, user.photoUser
+        FROM deal, user, offre, etat,service
         WHERE deal.idOffreUser1 = offre.idOffre
         AND offre.idService = service.idService
         AND deal.idEtat = etat.idEtat
@@ -51,5 +64,6 @@ public function getAllDemandes()
         return $sql->result();
 
     }
-
+    
+  
 }?>

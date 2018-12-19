@@ -131,17 +131,18 @@ public function deconnexion()
 {
 	// mon url se double lorsque j'apelle la fonction deconnexion
 	$this->load->library("session");
+	$this->session->unset_userdata('idUser');
 	$this->session->sess_destroy();
 $this->load->view("index");	
 }			
 
-
-
 	public function utilisateur()
 	{	
+		
 		$this->load->model('M_demande');
 		$this->load->library('session');
 		$data['serviceUser2'] = $this->M_demande->getAllDealService();
+		$dataa['service2']=(array) $data['serviceUser2'][0];
 		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
 		$data['lesOffres'] = $this->M_demande->getAllOffre();
 		$data['lesDeals'] = $this->M_demande->getAllDeal();

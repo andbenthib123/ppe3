@@ -15,7 +15,11 @@ $this->load->library('session');
         <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>./Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
         <link href="<?php echo base_url();?>./CSS/style_accueil.css" rel="stylesheet">  
+<<<<<<< HEAD
         
+=======
+          
+>>>>>>> brancheBen-
         <script type="text/javascript">
         $(
             function()
@@ -53,16 +57,16 @@ $this->load->library('session');
 <p class="p"><?php  echo$_SESSION['nomUser'];?></p>
 <img class="p photoheader"src="<?php echo $_SESSION['photoUser']; ?>"  >
 <nav class='menu'>
-<a href="<?php base_url()?>index.php/Controller_login/deconnexion/">Deconnexion</a>
+<a href="<?php echo base_url()?>index.php/Controller_login/deconnexion/">Deconnexion</a>
 <a href="#deal">Deal &nbsp;|</a>
 <a href='#demande' >Demande &nbsp;|</a>
 <a href='#offre' >Offre &nbsp;|</a>
 <a href='<?php base_url();?>utilisateur' >Home &nbsp;|</a>
-<nav>
+    </nav>
 </div>
 </header>
     <?php
-  
+  $i=0;
     echo '<div>';
     echo '<br>';
     echo '<div class="demande">';
@@ -99,7 +103,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h2>';
+     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/">+</a></h2>';
      echo '</div>';
      echo '<br>';
      foreach($lesDeals as $unDeal)
@@ -111,16 +115,15 @@ if($unDeal->idEtat ==1)
     echo"<img class='photoCorps' src='".$unDeal->photoUser."'>";
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
-    echo"<p>VS</p>";
-   
-    foreach($serviceUser2 as $serviceUser)
-    {
-    echo"<p>".$serviceUser->nomService."</p>"; 
-    }
+    echo"<p>VS</p>"; 
+    echo"<p>".$serviceUser2[$i]->service2."</p>"; 
+    $i++;
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
-    echo"<input type='button' value='afficher'>";
+    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>";
      echo '</div>';
+
+
 }
 else
 {
@@ -131,14 +134,12 @@ else
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
     echo"<p>VS</p>";
-    foreach($serviceUser2 as $serviceUser)
-    {
-    echo"<p>".$serviceUser->nomService."</p>"; 
-    } 
+    echo"<p>".$serviceUser2[$i]->service2."</p>"; 
+    $i++;
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
 
-    echo"<input type='button' value='afficher'>";
+    echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>";
      echo '</div>';
         }
     }
