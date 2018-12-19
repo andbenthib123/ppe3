@@ -142,9 +142,12 @@ $this->load->view("index");
 		$this->load->library('session');
 		$data['serviceUser2'] = $this->M_demande->getAllDealService();
 		$dataa['service2']=(array) $data['serviceUser2'][0];
+		var_dump($data['serviceUser2']);
 		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
 		$data['lesOffres'] = $this->M_demande->getAllOffre();
 		$data['lesDeals'] = $this->M_demande->getAllDeal();
+		var_dump($data['lesDeals']);
+
 		$this->load->view('compte_Utilisateur',$data);
 	}
 }

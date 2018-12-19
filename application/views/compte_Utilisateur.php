@@ -62,7 +62,7 @@ $this->load->library('session');
 </div>
 </header>
     <?php
-  
+  $i=0;
     echo '<div>';
     echo '<br>';
     echo '<div class="demande">';
@@ -107,34 +107,39 @@ $this->load->library('session');
          
 if($unDeal->idEtat ==1)
 {
+    if($unDeal->noteUser1=0)
+    {
     echo '<div id="divDealR" class="corpsDeal centre">';
     echo"<img class='photoCorps' src='".$unDeal->photoUser."'>";
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
     echo"<p>VS</p>";
-   
-    foreach($serviceUser2 as $serviceUser)
-    {
-    echo"<p>".$serviceUser->service2."</p>"; 
-    }
+    echo"<p>".$serviceUser2[$i]->service2."</p>"; 
+    $i++;
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
     echo'<h4><a href='.base_url()."index.php/C_creationsDeals/noteDeals/".$unDeal->idDeal.">afficher</a></h4>";
      echo '</div>';
+
+}
+else
+{
+    
+}
+
 }
 else
 {
     if($unDeal->idEtat ==2)
         {
+            
     echo '<div id="divDealV" class="corpsDeal centre">';
     echo"<img class='photoCorps' src='".$unDeal->photoUser."'>";
     echo"<p>".$unDeal->nomUser."</p>";
     echo"<p>".$unDeal->nomService."</p>";
     echo"<p>VS</p>";
-    foreach($serviceUser2 as $serviceUser)
-    {
-    echo"<p>".$serviceUser->service2."</p>"; 
-    } 
+    echo"<p>".$serviceUser2[$i]->service2."</p>"; 
+    $i++;
     echo"<p>".$unDeal->dateDeal."</p>";
     echo"<p>".$unDeal->noteUser1."-".$unDeal->noteUser2."</p>";
 
