@@ -58,7 +58,7 @@ $this->load->library('session');
 <a href='#demande' >Demande &nbsp;|</a>
 <a href='#offre' >Offre &nbsp;|</a>
 <a href='<?php base_url();?>utilisateur' >Home &nbsp;|</a>
-<nav>
+    </nav>
 </div>
 </header>
     <?php
@@ -99,7 +99,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/index">+</a></h2>';
+     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/">+</a></h2>';
      echo '</div>';
      echo '<br>';
      foreach($lesDeals as $unDeal)

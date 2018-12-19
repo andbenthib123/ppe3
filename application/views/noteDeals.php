@@ -27,7 +27,7 @@
 <input type="submit" value="valider"  name="btnValider">
 
 </form>
-<form methode='GET' action="<?php echo base_url()?>index.php/Controller_login/utilisateur/retour">
+<form methode='GET' action="<?php echo base_url()?>index.php/Controller_login/utilisateur">
     <input class='btnCreation' type='submit' name='btnHome' value='retour'>
     </form>
 

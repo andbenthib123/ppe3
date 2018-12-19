@@ -11,7 +11,7 @@
     <script src="<?php echo base_url();?>Bootstrap/js/bootstrap.js"></script>
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
-    <link href="<?php echo base_url();?>CSS/style_demandeetoffre.css" rel="stylesheet">  
+    <link href="<?php echo base_url();?>CSS/deal.css" rel="stylesheet">  
     
 </head>
 <body>
@@ -19,30 +19,40 @@
 <div>
 <input type='search' name='txtRecherche' onkeyup='barreRecherche()' id='txtRecherche' placeholder='saisir le texte recherché dans une offre'>
 </div>
-<div>
-<h2>Mes Demandes</h2>
+<center>
+<h2 id="milieux">Mes Demandes</h2>
 <?php 
 foreach($lesDemandes as $UneDemande)
 {
-    echo"<div id='".$UneDemande->idDemande."'>";
-    echo $UneDemande->descriptionDemande."<br>";
+    echo"<div onclick='recupOffre(".$UneDemande->idDemande.",".$UneDemande->idService.")' class='mesDemandes' name='".$UneDemande->idDemande."' id='".$UneDemande->idDemande."'>";
+    echo "<p>".$UneDemande->nomService."</p>";
+    echo "<p>".$UneDemande->descriptionDemande."</p>";
     echo"</div>";
 }
 ?>
-    <h2>mes Offres</h2>
+</center>
+<center>
+    <h2 id='milieux'>mes Offres</h2>
     <?php 
 foreach($lesOffres as $UneOffre)
 {
-      echo"<div id='".$UneOffre->idOffre."'>";
-      echo $UneOffre->descriptionOffre."<br>";
+      echo"<div onclick='recupDemande(".$UneOffre->idOffre.",".$UneOffre->idService.")' class='mesOffres'  name='".$UneOffre->idOffre."' id='".$UneOffre->idOffre."'>";
+      echo "<p>".$UneOffre->nomService."</p>";
+      echo "<p>".$UneOffre->descriptionOffre."</p>";
       echo"</div>";
 }
-
 ?>
+</center>
 
-</div> 
-  <div id='lesUsers'>
-  </div>
-   
+<br><br><br>
+
+<div id='lesUsers'>
+</div>
+   <br>
+<div id="demOffreUserSelectionne">
+</div>
+<center>
+<input type="submit" value='creer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
+</center>
 </body>
 </html>

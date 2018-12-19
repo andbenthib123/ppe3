@@ -1,20 +1,16 @@
  
 <?php
-
 class C_creationsDeals extends CI_Controller
 {
 
-   
 public function index()
 { 
-
     $this->load->model('M_creationDeals');
-    
     $data['lesDemandes']=$this->M_creationDeals->getAllDemandes();
     $data['lesOffres']=$this->M_creationDeals->getAllOffre();
     $this->load->view('creationDeals',$data);
-
 }
+
 
 public function afficherLesUsers()
 {
@@ -25,6 +21,11 @@ public function afficherLesUsers()
    
 }
 
+public function ajouterDeals()
+    {
+        $this->load->model("M_creationDeals");
+        $data['ajoutDeals'] = $this->M_creationDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
+    }
 
 public function noteDeals($idMonDeal)
 {
