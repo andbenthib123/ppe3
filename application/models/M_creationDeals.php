@@ -27,8 +27,17 @@ public function getAllDemandes()
 
     public function getRecherche($txtRecherche)
     {
-    $query=$this->db->query("SELECT offre.descriptionOffre, user.nomUser user from user,offre WHERE offre.idUser=user.idUser and offre.descriptionOffre like '".$txtRecherche."'");
-return $query->result();   
+    $query=$this->db->query("SELECT offre.descriptionOffre, user.nomUser,user.idUser
+    from user,offre 
+    WHERE offre.idUser = user.idUser 
+    and offre.descriptionOffre like '".$txtRecherche."'");
+    return $query->result();   
 }
   
+public function lienDeal()
+{
+$query=$this->db->query("select offre.idOffre from offre where offre.idUser='1' and exists(select demande.idDemande from demande where offre.idOffre=demande.idDemande and demande.idUser='1')");
+}
+
+
 }?>

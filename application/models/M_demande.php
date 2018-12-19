@@ -25,18 +25,17 @@ public function getAllDemandes()
        return $query->result();
     }
 
-    public function getAllDeal()
+    public function getAllDeals()
     {
         $this->load->library('session');
         $idUser=$this->session->userdata('idUser');
-        $sql = $this->db->query("select user.photoUser, user.nomUser,deal.idDeal, service.nomService, deal.dateDeal, deal.noteUser1, deal.noteUser2
-        FROM deal, user, offre, etat, service
-        WHERE deal.idOffreUser1 = offre.idOffre
-        AND offre.idService = service.idService
-        AND deal.idEtat = etat.idEtat
-        AND deal.idCreateur = user.idUser
-        AND deal.idCreateur ='".$idUser."'");
-        return $sql->result();   
+        $query=$this->db->query("select deal.idDeal as idDeal,deal.idEtat,service.nomService,user.photoUser,deal.noteUser1,deal.noteUser2,deal.idDeal ,deal.dateDeal,offre.idUser,user.nomUser 
+        from service,user,deal,offre 
+        where service.idService=offre.idService
+         and  user.idUser=offre.idUser
+         and offre.idOffre=deal.idOffreUser2 
+         and deal.idCreateur='".$idUser."'");
+        return $query->result();
     }
     public function getAllDealService()
     {

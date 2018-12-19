@@ -22,9 +22,9 @@ public function modifOffre($idMonOffre)
         $this->load->model('M_modifOffre');
         $descriOffre = $this->input->post('descriOffre');
         $dateOffre = $this->input->post('dateOffre');
-       $setAllOffre['setAllOffre']= $this->M_modifOffre->setAllModifOffre($descriOffre,$dateOffre);
-       $data['modifierMonOffre'] = $this->M_modifOffre->getAllModifOffre($idMonOffre);
-       header('location:'.base_url().'index.php/Controller_login/utilisateur/');     
+        $setAllOffre['setAllOffre']= $this->M_modifOffre->setAllModifOffre($descriOffre,$dateOffre);
+        $data['modifierMonOffre'] = $this->M_modifOffre->getAllModifOffre($idMonOffre);
+        header('location:'.base_url().'index.php/Controller_login/utilisateur/');     
        
     }
     function retour()

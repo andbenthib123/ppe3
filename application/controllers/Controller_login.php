@@ -132,10 +132,8 @@ public function deconnexion()
 	$this->load->library("session");
 	$this->session->unset_userdata('idUser');
 	$this->session->sess_destroy();
-$this->load->view("index");	
+    $this->load->view("index");	
 }			
-
-
 
 	public function utilisateur()
 	{	
@@ -144,8 +142,7 @@ $this->load->view("index");
 		$data['serviceUser2'] = $this->M_demande->getAllDealService();
 		$data['lesDemandes'] = $this->M_demande->getAllDemandes();
 		$data['lesOffres'] = $this->M_demande->getAllOffre();
-		$data['lesDeals'] = $this->M_demande->getAllDeal();
-
+		$data['lesDeals'] = $this->M_demande->getAllDeals();
 		$this->load->view('compte_Utilisateur',$data);
 	}
 }
