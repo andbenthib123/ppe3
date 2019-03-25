@@ -63,11 +63,7 @@ $this->load->library('session');
     <form methode='GET' action="<?php echo base_url()?>index.php/Controller_login/utilisateur/retour">
     <input class='btnCreation' type='submit' name='btnHome' value='retour'>
     </form>
-<<<<<<< HEAD
-    <div>
-=======
 
     
->>>>>>> brancheBen-
 </body>
 </html>

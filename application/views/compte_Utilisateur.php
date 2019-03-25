@@ -24,22 +24,22 @@ $this->load->library('session');
              
               $('.element').mouseenter(
                   function(){
-                      $(this).css('background','#d4caca71');
+                      $(this).css('background','#5C6BC0');
                   }
               )
               $('.element').mouseout(
                   function(){
-                      $(this).css('background','#d4caca71');
+                      $(this).css('background','#B3E5FC');
                   }
               )
               $('.corps').mouseenter(
                   function(){
-                      $(this).css('background','#d4caca71')
+                      $(this).css('background','#BBDEFB')
                   }
               )
               $('.corps').mouseout(
                   function(){
-                      $(this).css('background','#d4caca71')
+                      $(this).css('background','#B3E5FC')
                   }
               )
             }
@@ -66,7 +66,7 @@ $this->load->library('session');
     echo '<div>';
     echo '<br>';
     echo '<div class="demande">';
-    echo '<h2 id="demande">MES DEMANDES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationDemande/">+</a></h2>';
+    echo '<h3 id="demande">MES DEMANDES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationDemande/">+</a></h3>';
     echo '</div>';
     echo '<br>';
     
@@ -84,7 +84,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="offre">MES OFFRES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h2>';
+     echo '<h3 id="offre">MES OFFRES &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationOffre/">+</a></h3>';
      echo '</div>';
      echo '<br>';
      foreach($lesOffres as $uneOffre)
@@ -99,7 +99,7 @@ $this->load->library('session');
      echo '<div>';
      echo '<br>';
      echo '<div class="fondDemande">';
-     echo '<h2 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/">+</a></h2>';
+     echo '<h3 id="deal">mes Deals &nbsp<a class="lienplus" href="'.base_url().'index.php/C_creationsDeals/">+</a></h3>';
      echo '</div>';
      echo '<br>';
      foreach($lesDeals as $unDeal)
