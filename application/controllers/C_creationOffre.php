@@ -24,20 +24,21 @@ class C_creationOffre extends CI_Controller
         $idUser=$_SESSION['idUser'];
         $descriptionOffre=$_POST['txtDescriptionsOffre'];
         $idservice=$_POST['txtSelect'];
+       
+       
         if(!empty($_POST['txtDescriptionsOffre']))
         {
           if($_POST['txtSelect']==null)
           {     
-            $service['service']=$this->M_Offre->afficherlesservices();
+            $data['service']=$this->M_Offre->afficherlesservices();
             $data['select'] = "Ton message d'erreur";
-            $this->load->view('creationOffre',$data,$service);	
+            $this->load->view('creationOffre',$data);	
     
         }
         else
         {   
- //je sais pas pk lorsque la page se rafraichit les services disparaissent alors que je charge bien la requete pour les afficher
           $insereOffre['insererOffre']=$this->M_Offre->M_insererOffre($descriptionOffre,$idservice);           
-          $this->load->view('creationOffre',$insereOffre,$service);
+         
           header('location:'.base_url().'index.php/Controller_login/utilisateur/');     
 
         }
@@ -45,11 +46,9 @@ class C_creationOffre extends CI_Controller
       else
       {
     
-        $service['service']=$this->M_Offre->afficherlesservices();
-        
+        $data['service']=$this->M_Offre->afficherlesservices();
         $data['descriptions'] = "Ton message d'erreur";     	
-        $this->load->view('creationOffre',$data,$service);	
-
+        $this->load->view('creationOffre',$data);	
       } 
      
     } 

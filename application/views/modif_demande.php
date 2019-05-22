@@ -71,7 +71,7 @@ foreach($modifierMaDemande as $ServiceDemande)
 }
 ?>
 </div>
-<input class='button'  type="submit" name="btnValider" value="valider"><br>
+<input class='button'  type="submit" name="btnValider" value="Modifier"><br>
 </form>
 
 <form methode="POST" action="<?php echo base_url(); ?>index.php/Controller_login/utilisateur/retour">

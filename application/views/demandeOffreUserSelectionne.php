@@ -19,31 +19,63 @@ $this->load->library('session');
     <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">  
     <link href="<?php echo base_url();?>CSS/deal.css" rel="stylesheet">  
     
+    <script type="text/javascript">
+     $(
+       function()
+       {
+
+        $(".sesDemandes").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+    
+        
+        $(".sesOffres").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+    
+        $(".mesOffres").click(
+        function()
+        {
+        $(this).css('background-color','#2E9AFE');
+        });
+     }
+     )
+        </script>
 </head>
 <body>
 
 <h3>ses offres</h3>
 <?php
-  echo"<div>";
+  
 foreach($offreSelectionne as $uneOffre)
 {
-  echo"<div onclick='selectOffreDemande(".$uneOffre->idOffre.",".$uneOffre->idService.")' name='".$uneOffre->idOffre."' class='mesOffres'>";
+  echo"<div class='sesOffres' onclick='selectOffreDemande(".$uneOffre->idOffre.",".$uneOffre->idService.")' name='".$uneOffre->idOffre."' class='mesOffres'>";
   echo"<p>".$uneOffre->nomService."</p>";
   echo"<p >".$uneOffre->descriptionOffre."</p>";
   echo"</div>";
+  
+
+  
 }
 ?>
- 
+
 <h3>ses demandes  </h3>
 <?php
 foreach($DemandeSelectionne as $uneDemande)
 {
-  echo"<div  onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' class='mesDemandes'>";
+ 
+  echo"<div class='sesDemandes' onclick='selectAll(".$uneDemande->idDemande.",".$uneDemande->idService.")'  name='".$uneDemande->idDemande."' class='mesDemandes'>";
   echo"<p>".$uneDemande->nomService."</p>";
   echo"<p>".$uneDemande->descriptionDemande."</p>";
   echo"</div>";
-  echo"</div>";
+
 }
+
 ?>
+
 </body>
 </html>

@@ -86,10 +86,7 @@ return $query->result();
         return $query->result();   
     }
   
-public function lienDeal()
-{
-$query=$this->db->query("select offre.idOffre from offre where offre.idUser='1' and exists(select demande.idDemande from demande where offre.idOffre=demande.idDemande and demande.idUser='1')");
-}
+
 
 public function updateNote($note1)
 {

@@ -1,4 +1,5 @@
-      function barreRecherche()
+     var larecherche;
+     function barreRecherche()
 {  
    if($('#txtRecherche').val().length>"2")
    {
@@ -36,9 +37,9 @@ var MonServiceDemande;
 var idSonOffre;
 var serviceSonOffre;
 var idSaDemande;
-var serviceSaDemande
+var serviceSaDemande;
 
-    
+ 
 function recupOffre(idDeOffre,idService)
 {
 
@@ -72,52 +73,47 @@ function selectAll(tousRecup,idService)
 }
 
 function ajouterDeals()
-{
-    if(MonServiceDemande != serviceSonOffre && MonServiceOffre != serviceSaDemande)
-    {
-        if(idMaDemande!=idSonOffre && idMonOffre!=idSaDemande)
-        {
-            $.ajax
-            (
-                {
-                    type:"get",
-                    url:"ajouterDeals",
-                    data:"idOffreUser1="+idSonOffre+"&idOffreUser2="+idMonOffre,
-                    success:function(data)
-                    {
-                        alert("L'insertion du deal à été effectué");
+ {
+
+     if(MonServiceDemande == serviceSonOffre && MonServiceOffre == serviceSaDemande)
+     {
+         alert('ok');
+         if(idMaDemande!=idSonOffre && idMonOffre!=idSaDemande)
+                  {
+             $.ajax
+             (
+                 {
+                     type:"get",
+                     url:"ajouterDeals",
+                     data:"idOffreUser1="+idSonOffre+"&idOffreUser2="+idMonOffre,
+                     success:function(data)
+                     {
+                         alert("L'insertion du deal à été effectué");
                      
-                    },
-                    error:function()
-                    {
-                        alert("Erreur lors de l'ajout du deal");
-                    }
-                }
-            )
-        }
-        else
-        {
-            alert("Vous ne pouvez demandez une offre en échange de la même offre");
-        }
-    }
-    else
-    {
-        if(MonServiceDemande == serviceSonOffre)
-        {
-            alert("L'offre choisie ne correspond à aucune de vos demandes");
-        }
-        else
-        {
-            alert("L'offre que vous proposez ne correspond à aucunes des demandes de l'utilisateur sélectionner");
-        }
-    }
-}
+                     },
+                     error:function()
+                     {
+                         alert("Erreur lors de l'ajout du deal");
+                     }
+                 }
+             )
+         }
+         else
+         {
+             alert("Vous ne pouvez demandez une offre en échange de la même offre");
+         }
+     }
+     else
+     {       
+        alert("votre demande a echoue car votre service ne correspond pas a son service ou son offre ne correspond pas a son offre");   
+     }
+ }
 
 
 
 function demOffreUserSelectionne(idleUser)
 {  
-    
+
     $.ajax
     (
         {
@@ -138,38 +134,3 @@ function demOffreUserSelectionne(idleUser)
         }
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function noteDeals()
-{  
-    $.ajax
-    (
-        {
-            
-            type:"get", 
-            URL:"index.php/C_creationsDeals/noteDeals/",
-            data:"",
-            success: function()
-            {
-        
-               
-            },       
-            error:function()
-            {
-            }
-        }
-    );
-}
-

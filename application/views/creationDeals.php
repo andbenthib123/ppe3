@@ -42,7 +42,7 @@
 </head>
 <body>
  
-<div>
+<div >
 <input type='search' name='txtRecherche' onkeyup='barreRecherche()' id='txtRecherche' placeholder='saisir votre demande '>
 </div>
 <center>
@@ -70,15 +70,15 @@ foreach($lesOffres as $UneOffre)
 ?>
 </center>
 
-<br><br><br>
 
-<div id='lesUsers'>
+</div>
+<div id="lesUsers">
 </div>
    <br>
 <div id="demOffreUserSelectionne">
 </div>
 <center>
-<input type="submit" value='créer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
+<input type="button" value='créer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
 </center>
 
 <form methode="get" action="<?php echo base_url(); ?>index.php/Controller_login/utilisateur/retour">

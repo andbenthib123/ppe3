@@ -27,9 +27,9 @@ class C_creationDemande extends CI_Controller
         if($_GET['txtSelect']==null)
           { 
            
-            $service['service']=$this->M_creationDemande->afficherlesservices();       
+            $data['service']=$this->M_creationDemande->afficherlesservices();       
             $data['select'] = "Ton message d'erreur";
-            $this->load->view('creationOffre',$data,$service);	
+            $this->load->view('creationOffre',$data);	
       
           }
            else
@@ -43,8 +43,8 @@ class C_creationDemande extends CI_Controller
     } 
     else
     {
-      $service['service']=$this->M_creationDemande->afficherlesservices();
-      $afficherservice = (array) $service['service'][0];   
+      $data['service']=$this->M_creationDemande->afficherlesservices();
+      
       $data['descriptions'] = "Ton message d'erreur";
         $this->load->view('creationDemande',$data);	
      
@@ -55,7 +55,7 @@ class C_creationDemande extends CI_Controller
       $this->load->library('session');
       $idUser=$_SESSION['idUser'];
       
-    if(isset($_get['btnHome']))
+    if(isset($_GET['btnHome']))
     {
       header('location:'.base_url().'index.php/Controller_login/utilisateur/'.$idUser);
 
