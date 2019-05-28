@@ -1,4 +1,12 @@
-     var larecherche;
+     
+      var idMonOffre;
+var MonServiceOffre;
+var idMaDemande;
+var MonServiceDemande;
+var idSonOffre;
+var serviceSonOffre;
+var idSaDemande;
+var serviceSaDemande;
      function barreRecherche()
 {  
    if($('#txtRecherche').val().length>"2")
@@ -30,48 +38,6 @@
     }
 }
    
-var idMonOffre;
-var MonServiceOffre;
-var idMaDemande;
-var MonServiceDemande;
-var idSonOffre;
-var serviceSonOffre;
-var idSaDemande;
-var serviceSaDemande;
-
- 
-function recupOffre(idDeOffre,idService)
-{
-
-    idMonOffre=idDeOffre;
-    MonServiceOffre=idService;
-    console.log(idDeOffre,idService);
-
-}
-function recupDemande(idDeDemande,idService)
-{
-    
-
-    idMaDemande=idDeDemande;
-    MonServiceDemande=idService;
-    console.log(idDeDemande,idService);
-
-}
-function selectOffreDemande(selectOffre,idService)
-{
-    idSonOffre=selectOffre;
-    serviceSonOffre=idService;
-    console.log(selectOffre,idService);
-
-}
-function selectAll(tousRecup,idService)
-{
-    idSaDemande=tousRecup;
-    serviceSaDemande=idService;
-    console.log(tousRecup,idService);
-
-}
-
 function ajouterDeals()
  {
 
@@ -108,6 +74,39 @@ function ajouterDeals()
         alert("votre demande a echoue car votre service ne correspond pas a son service ou son offre ne correspond pas a son offre");   
      }
  }
+ 
+function recupOffre(idDeOffre,idService)
+{
+
+    idMonOffre=idDeOffre;
+    MonServiceOffre=idService;
+    console.log(idDeOffre,idService);
+
+}
+function recupDemande(idDeDemande,idService)
+{
+    
+
+    idMaDemande=idDeDemande;
+    MonServiceDemande=idService;
+    console.log(idDeDemande,idService);
+
+}
+function selectOffreDemande(selectOffre,idService)
+{
+    idSonOffre=selectOffre;
+    serviceSonOffre=idService;
+    console.log(selectOffre,idService);
+
+}
+function selectAll(tousRecup,idService)
+{
+    idSaDemande=tousRecup;
+    serviceSaDemande=idService;
+    console.log(tousRecup,idService);
+
+}
+
 
 
 

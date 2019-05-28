@@ -48,7 +48,7 @@
     <input type="password" placeholder="mot de passe" class="input form-control" name="txtMdp" id="txtMdp"><br>
   
     <input type="submit" class="btn btn-primary btn-block btn-large" name="btnValider" id="btnValider" value="valider"><br>
-    <a class="inscrire" style="text-decoration:none;" href="<?php echo base_url()?>index.php/Controller_login/inscriptions">inscris toi</a>
+    <a class="btn btn-inscription btn-block btn-large" style="text-decoration:none;" href="<?php echo base_url()?>index.php/Controller_login/inscriptions">inscris toi</a>
 
     <div>
 </form>

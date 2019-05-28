@@ -13,7 +13,7 @@ class Controller_login extends CI_Controller {
 		public function login()
 
 		{
-			//	
+			
 
 			if(!empty($_POST['txtUser']))
 			{

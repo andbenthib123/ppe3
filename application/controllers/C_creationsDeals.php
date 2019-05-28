@@ -30,11 +30,12 @@ $this->load->view("demandeOffreUserSelectionne",$data);
 
 }
 
-public function ajouterDeals()
+public function ajouterUnDeals()
     {
         $this->load->model("M_creationDeals");
         $data['ajoutDeals'] = $this->M_creationDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
-        header('location:'.base_url().'index.php/Controller_login/utilisateur/');
+        $this->load->view("creationsDeals",$data);
+
     }
 
 public function noteDeals($idMonDeal)

@@ -56,8 +56,7 @@ foreach($lesDemandes as $UneDemande)
     echo"</div>";
 }
 ?>
-</center>
-<center>
+
     <h2 id='milieux'>mes Offres</h2>
     <?php 
 foreach($lesOffres as $UneOffre)
@@ -68,8 +67,6 @@ foreach($lesOffres as $UneOffre)
       echo"</div>";
 }
 ?>
-</center>
-
 
 </div>
 <div id="lesUsers">
@@ -77,15 +74,19 @@ foreach($lesOffres as $UneOffre)
    <br>
 <div id="demOffreUserSelectionne">
 </div>
-<center>
-<input type="button" value='créer' name='txtCreer' class='button' onclick='ajouterDeals()' id='txtCreer'>
-</center>
+
+<input type="button" value='créer' name='txtCreer' class='button' id='txtCreer'>
 
 <form methode="get" action="<?php echo base_url(); ?>index.php/Controller_login/utilisateur/retour">
-<center>
+
 <input type="submit" value='retour' name='txtRetour' class='btnCreationRetour' id='txtCreer'>
 </center>
 </form>
 
 </body>
+<script>
+    $(document).ready(function() {
+        $("#txtCreer").click(ajouterDeals); 
+    });
+</script>
 </html>

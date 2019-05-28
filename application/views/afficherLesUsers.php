@@ -29,7 +29,7 @@
     echo"<p>".$leUser->nomUser."</p>";
     echo"</div>";
     echo"</div>";
-echo"</div>";
+    echo"</div>";
 
  }    
      ?>
