@@ -7,6 +7,37 @@ var idSonOffre;
 var serviceSonOffre;
 var idSaDemande;
 var serviceSaDemande;
+function recupOffre(idDeOffre,idService)
+{
+
+    idMonOffre=idDeOffre;
+    MonServiceOffre=idService;
+    console.log(idDeOffre,idService);
+
+}
+function recupDemande(idDeDemande,idService)
+{
+    
+
+    idMaDemande=idDeDemande;
+    MonServiceDemande=idService;
+    console.log(idDeDemande,idService);
+
+}
+function selectOffreDemande(selectOffre,idService)
+{
+    idSonOffre=selectOffre;
+    serviceSonOffre=idService;
+    console.log(selectOffre,idService);
+
+}
+function selectAll(tousRecup,idService)
+{
+    idSaDemande=tousRecup;
+    serviceSaDemande=idService;
+    console.log(tousRecup,idService);
+
+}
      function barreRecherche()
 {  
    if($('#txtRecherche').val().length>"2")
@@ -43,7 +74,7 @@ function ajouterDeals()
 
      if(MonServiceDemande == serviceSonOffre && MonServiceOffre == serviceSaDemande)
      {
-         alert('ok');
+        
          if(idMaDemande!=idSonOffre && idMonOffre!=idSaDemande)
                   {
              $.ajax
@@ -75,37 +106,7 @@ function ajouterDeals()
      }
  }
  
-function recupOffre(idDeOffre,idService)
-{
 
-    idMonOffre=idDeOffre;
-    MonServiceOffre=idService;
-    console.log(idDeOffre,idService);
-
-}
-function recupDemande(idDeDemande,idService)
-{
-    
-
-    idMaDemande=idDeDemande;
-    MonServiceDemande=idService;
-    console.log(idDeDemande,idService);
-
-}
-function selectOffreDemande(selectOffre,idService)
-{
-    idSonOffre=selectOffre;
-    serviceSonOffre=idService;
-    console.log(selectOffre,idService);
-
-}
-function selectAll(tousRecup,idService)
-{
-    idSaDemande=tousRecup;
-    serviceSaDemande=idService;
-    console.log(tousRecup,idService);
-
-}
 
 
 

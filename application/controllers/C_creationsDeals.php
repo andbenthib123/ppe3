@@ -30,7 +30,7 @@ $this->load->view("demandeOffreUserSelectionne",$data);
 
 }
 
-public function ajouterUnDeals()
+public function ajouterDeals()
     {
         $this->load->model("M_creationDeals");
         $data['ajoutDeals'] = $this->M_creationDeals->ajouterDeals($_GET['idOffreUser1'], $_GET['idOffreUser2']);
